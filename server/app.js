@@ -3,11 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var dotenv = require('dotenv');
 var app = express();
+
+dotenv.config()
+mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true})
+.then(() => {
+console.log('the force will be with you...always...');
+});
+mongoose.set('useCreateIndex', true);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
