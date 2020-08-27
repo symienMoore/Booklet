@@ -5,5 +5,29 @@ const bookSchema = new Schema({
     title: {
         type: String,
         required: true
+    },
+
+    desc: {
+        type: String,
+        required: true,
+    },
+
+    pub_date: {
+        type: Date
+    },
+
+    rating: {
+        type: Number,
+        required: true
+    },
+
+    author: {
+        type: String,
+        required: true
+    },
+
+    genre: {
+        trype: String,
+        required: true
     }
 })
