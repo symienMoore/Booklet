@@ -29,5 +29,10 @@ const bookSchema = new Schema({
     genre: {
         trype: String,
         required: true
-    }
+    },
+
+    imagePath: {
+        type: String,
+        required: true
+    },
 })
