@@ -11,8 +11,9 @@
 var express = require('express');
 var router = express.Router();
 var controller = require('../controllers/book.controller');
+var verify = require('../config/verify');
 
-
-router.get('/book-test', controller.bookTest);
+router.get('/book-test', verify, controller.bookTest);
+router.post('/add-book', verify, creatBook )
 
 module.exports = router;

@@ -8,25 +8,17 @@ exports.registerUser = (req, res, next) => {
     });
 }
 
-exports.userSignIn = async function(req, res, next) {
-    if(req.body.email && req.body.password){
+exports.userSignIn = async (req, res) => {
+    if(req.body.email && req.body.password) { 
         await User.authenticate(req.body.email, req.body.password, (err, user) => {
-          if(err || !user){
-            var err = new Error('wrong email or password');
-            err.status = 401;
+          if (err || !user) {
             res.send({message: 'no user!'});
-            return next(err)
-          } else if(user){
+          } else if(user) {
             const token = jwt.sign({_id: user._id}, process.env.SECRET_TOKEN);
-            res.header('authtoken', token).send({token});
-            // res.send({token});
-            console.log(token);
-            return; 
+            res.header('authtoken', token).send({token}); 
           }
         });
-      }else{
-        var err = new Error('email and password are required');
-        err.status = 401;
+      }else { 
         return res.send({error: "email and password are required!"});
       }
 }
