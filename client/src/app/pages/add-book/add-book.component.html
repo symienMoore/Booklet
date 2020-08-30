@@ -1,22 +1,22 @@
 <h1>Add a book</h1>
-<form class="ui form">
+<form class="ui form" (ngSubmit)="addBook()">
     <div class="field">
       <label>title</label>
-      <input type="text" name="title" placeholder="title">
+      <input type="text" name="title" placeholder="title" [(ngModel)]="book.title">
     </div>
     <div class="field">
       <label>description</label>
-      <textarea rows="2" spellcheck="false" style="margin-top: 0px; margin-bottom: 0px; height: 118px;" placeholder="add a description..."></textarea>
+      <textarea name="desc" rows="2" spellcheck="false" style="margin-top: 0px; margin-bottom: 0px; height: 118px;" placeholder="add a description..." [(ngModel)]="book.desc"></textarea>
     </div>
     <div class="field">
-      <input type="date" name="pub_date" id="">
+      <input type="date" name="pub_date" id="" [(ngModel)]="book.pub_date">
     </div>
     <div class="field">
-        <input type="number" name="rating" placeholder="rating" max="5">
+        <input type="number" name="rating" placeholder="rating" max="5" [(ngModel)]="book.rating">
     </div>
     <div class="field">
         <label>author</label>
-        <input type="text" name="author" placeholder="author">
+        <input type="text" name="author" placeholder="author" [(ngModel)]="book.author">
     </div>
     <div class="field">
         <label>genre</label>
@@ -24,7 +24,7 @@
     </div>
     <div class="field">
         <label>image</label>
-        <input type="text" name="image" placeholder="image">
+        <input type="file" name="image" placeholder="image" [(ngModel)]="book.imagePath">
     </div>
     <button class="ui button" type="submit">Submit</button>
   </form>
