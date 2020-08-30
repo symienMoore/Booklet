@@ -14,6 +14,6 @@ var controller = require('../controllers/book.controller');
 var verify = require('../config/verify');
 
 router.get('/book-test', verify, controller.bookTest);
-router.post('/add-book', verify, creatBook )
+router.post('/add-book', verify, controller.createBook )
 
 module.exports = router;

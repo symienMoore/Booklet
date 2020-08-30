@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bookSchema = require('../models/Book.model');
+const bookSchema = require('./Book.js').schema;
 var bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
@@ -31,9 +31,11 @@ const userSchema = new mongoose.Schema({
         default: Date.now
     },
 
-    Books: [
-        bookSchema
-    ]
+    Books: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Book"
+        }]
+    
 })
 
 userSchema.pre('save', function(next){
