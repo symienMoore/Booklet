@@ -11,6 +11,7 @@ module.exports = (req, res, next) => {
        req.user = {id}
          next();
     } catch (error) {
-         res.send('sorry, it looks like there was a problem with authentication:  ' + error); 
+         res.send('we do not grant you the rank of master.....  ' + error); 
     }
 }
+

@@ -8,20 +8,22 @@ exports.registerUser = (req, res, next) => {
     });
 }
 
-exports.userSignIn = async (req, res) => {
-    if(req.body.email && req.body.password) { 
+exports.userSignIn = async function(req, res, next) {
+    if(req.body.email && req.body.password){
         await User.authenticate(req.body.email, req.body.password, (err, user) => {
-          if (err || !user) {
+          if(err || !user){
             res.send({message: 'no user!'});
-          } else if(user) {
+          } else if(user){
             const token = jwt.sign({_id: user._id}, process.env.SECRET_TOKEN);
-            res.header('authtoken', token).send({token}); 
+            res.header('authtoken', token).send({token});
+            return; 
           }
         });
-      }else { 
+      }else{
         return res.send({error: "email and password are required!"});
       }
 }
+
 
 exports.getUserProfile = async (req, res) => { 
   user = req.user.id;
