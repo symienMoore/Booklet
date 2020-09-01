@@ -4,11 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  addBook(book) {
+  addBook(book): any {
     return this.http.post('http://localhost:3000/books/add-book', book)
   }
 }

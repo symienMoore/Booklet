@@ -1,0 +1,30 @@
+<h1>Add a book</h1>
+<form class="ui form" enctype="multipart/form-data" (ngSubmit)="addBook()" >
+    <div class="field">
+      <label>title</label>
+      <input type="text" name="title" placeholder="title" (change)="createTitle($event)">
+    </div>
+    <div class="field">
+      <label>description</label>
+      <textarea name="desc" rows="2" spellcheck="false" style="margin-top: 0px; margin-bottom: 0px; height: 118px;" placeholder="add a description..." (change)="createDesc($event)"></textarea>
+    </div>
+    <div class="field">
+      <input type="date" name="pub_date" id="" (change)="createPub($event)">
+    </div>
+    <div class="field">
+        <input type="number" name="rating" placeholder="rating" max="5" (change)="createRating($event)">
+    </div>
+    <div class="field">
+        <label>author</label>
+        <input type="text" name="author" placeholder="author" (change)="createAuthor($event)">
+    </div>
+    <div class="field">
+        <label>genre</label>
+        <input type="text" name="genre" placeholder="genre" (change)="createGenre($event)">
+    </div>
+    <div class="field">
+        <label>image</label>
+        <input type="file" name="image" placeholder="image" (change)="createImagePath($event)">
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>

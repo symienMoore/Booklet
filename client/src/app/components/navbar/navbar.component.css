@@ -1,0 +1,41 @@
+nav {
+    /* margin-left: 65%; */
+    align-items: center;
+    background: #18dce7;
+}
+.logo{
+    position: absolute;
+    top: 18px;
+    left: 50px;
+}
+
+.logo a {
+    color: white;
+   font-weight: bold;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    text-align: center;
+    /* align-items: center; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 70%;
+    background: #18dce7;
+}
+
+ul li {
+    list-style-type: none;
+    padding-left: 15px;
+    transition: 2s;
+}
+
+ul li a {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+}

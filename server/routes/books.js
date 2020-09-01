@@ -11,8 +11,24 @@
 var express = require('express');
 var router = express.Router();
 var controller = require('../controllers/book.controller');
+var verify = require('../config/verify');
+const multer = require('multer');
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'images')
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      cb(null, file.fieldname + '-' + uniqueSuffix)
+    }
+  })
+  var upload = multer({ storage: storage }).single("image")
 
 
-router.get('/book-test', controller.bookTest);
+
+
+router.get('/book-test', verify, controller.bookTest);
+router.post('/add-book', verify,  multer({storage: storage}).single("image"), controller.createBook )
 
 module.exports = router;

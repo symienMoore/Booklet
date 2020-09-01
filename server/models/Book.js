@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 var Schema = mongoose.Schema;
+var User = require('./User')
 
 const bookSchema = new Schema({
     title: {
@@ -27,12 +28,21 @@ const bookSchema = new Schema({
     },
 
     genre: {
-        trype: String,
+        type: String,
         required: true
     },
 
     imagePath: {
         type: String,
+    },
+
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required: true
     },
+
 })
+
+const Book =  mongoose.model('Book', bookSchema);
+module.exports = Book;
