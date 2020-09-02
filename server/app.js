@@ -10,6 +10,7 @@ var bookRouter = require('./routes/books');
 var dotenv = require('dotenv');
 var cors = require('cors');
 const multer = require('multer');
+var path = require("path");
 var app = express();
 
 dotenv.config()
@@ -23,7 +24,7 @@ mongoose.set('useCreateIndex', true);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
+app.use("/images", express.static(path.join("images")))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

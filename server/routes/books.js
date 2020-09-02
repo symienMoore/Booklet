@@ -29,6 +29,6 @@ var storage = multer.diskStorage({
 
 
 router.get('/book-test', verify, controller.bookTest);
-router.post('/add-book', verify,  multer({storage: storage}).single("image"), controller.createBook )
-
+router.post('/add-book', verify, multer({ storage: storage }).single("image"), controller.createBook);
+router.get('/all-books', verify, controller.getAllBooks);
 module.exports = router;

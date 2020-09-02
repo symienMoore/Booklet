@@ -7,6 +7,7 @@ exports.bookTest = (req, res) => {
 }
 
 exports.createBook = async (req, res) => {
+    const url = req.protocol + '://' + req.get("host");
         await User.findById({ _id: req.user.id }).then(async (user) => {
             const book = await Book.create({
                 title: req.body.title,
@@ -15,10 +16,17 @@ exports.createBook = async (req, res) => {
                 rating: req.body.rating,
                 author: req.body.author,
                 genre: req.body.genre,
-                imagePath: req.body.imagePath,
+                imagePath: url + "/images/" + req.file.filename,
                 user: req.user.id
             })
            res.send({mes: "book added!", status: 200})
         })
         
+}
+
+exports.getAllBooks = async (req, res) => {
+    await Book.find().then((books) => {
+        console.log(books)
+        res.send(books)
+    })
 }

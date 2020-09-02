@@ -1,0 +1,5 @@
+<div *ngFor="let book of books">
+    <img [src]="book.imagePath" [alt]="book.title" height="200" width="200">
+    <h1>{{ book.title }}</h1>
+    <p>{{ book.desc }}</p>
+</div>
