@@ -1,5 +1,36 @@
-<div *ngFor="let book of books">
-    <img [src]="book.imagePath" [alt]="book.title" height="200" width="200">
-    <h1>{{ book.title }}</h1>
-    <p>{{ book.desc }}</p>
+<div class="container">
+    <div *ngFor="let book of books">
+        <div class="bookElement">
+            <div class="ui small image">
+              <img class="bookImage" [src]="book.imagePath" [alt]="book.title" height="200" width="200">
+            </div>
+            <a [routerLink]="['/book', book._id]"><h1>{{ book.title }}</h1></a>
+            <p class="book-desc">{{ book.desc }}</p>
+            <p>rating: {{ book.rating }}</p>
+        </div>
+    </div>
 </div>
+<!-- <div class="container">
+    <div class="ui card" *ngFor="let book of books">
+        <div class="image">
+          <img [src]="book.imagePath">
+        </div>
+        <div class="content">
+          <a class="header">{{ book.title }}</a>
+          <div class="meta">
+            <span class="rating">
+                rating: {{ book.rating }}
+            </span>
+          </div>
+          <div class="description">
+            {{ book.desc }}
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="user icon"></i>
+            22 Friends
+          </a>
+        </div>
+      </div>
+</div> -->

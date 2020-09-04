@@ -13,6 +13,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BooksFeedComponent } from './pages/books-feed/books-feed.component';
+import { BookDetailComponent } from './pages/book-detail/book-detail.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +26,9 @@ import { BooksFeedComponent } from './pages/books-feed/books-feed.component';
     SignupComponent,
     AboutComponent,
     BooksFeedComponent,
+    BookDetailComponent,
+    ProfileComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,

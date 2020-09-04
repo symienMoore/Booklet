@@ -23,7 +23,6 @@ var storage = multer.diskStorage({
       cb(null, file.fieldname + '-' + uniqueSuffix)
     }
   })
-  var upload = multer({ storage: storage }).single("image")
 
 
 
@@ -31,4 +30,5 @@ var storage = multer.diskStorage({
 router.get('/book-test', verify, controller.bookTest);
 router.post('/add-book', verify, multer({ storage: storage }).single("image"), controller.createBook);
 router.get('/all-books', verify, controller.getAllBooks);
+router.get('/:id', verify, controller.getBookById);
 module.exports = router;
