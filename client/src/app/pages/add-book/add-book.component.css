@@ -2,7 +2,17 @@ form {
     width: 600px;
 }
 
-input {
+/* input {
     margin-top: 30px;
     border: 1px solid #259AF4;
+} */
+
+.button {
+    background: #17DCE7;
+    color: white;
+}
+
+.button:hover {
+    background: #17DCE7;
+    color: white;
 }

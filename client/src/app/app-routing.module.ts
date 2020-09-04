@@ -5,13 +5,21 @@ import { HomeComponent } from '../app/pages/home/home.component';
 import { LoginComponent } from '../app/pages/login/login.component';
 import { SignupComponent } from '../app/pages/signup/signup.component';
 import { AboutComponent } from "../app/pages/about/about.component";
+import { BooksFeedComponent } from "../app/pages/books-feed/books-feed.component";
+import { BookDetailComponent } from "../app/pages/book-detail/book-detail.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: "add-book", component: AddBookComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+
+  // users route
+  { path: 'user/login', component: LoginComponent },
+  { path: 'user/signup', component: SignupComponent },
+
+  // books route
+  { path: "book/add-book", component: AddBookComponent },
+  { path: 'books/feed', component: BooksFeedComponent },
+  { path: 'book/:id', component: BookDetailComponent }
 ];
 
 @NgModule({

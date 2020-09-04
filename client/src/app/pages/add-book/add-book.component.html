@@ -9,9 +9,11 @@
       <textarea name="desc" rows="2" spellcheck="false" style="margin-top: 0px; margin-bottom: 0px; height: 118px;" placeholder="add a description..." (change)="createDesc($event)"></textarea>
     </div>
     <div class="field">
+        <label for="">publication date</label>
       <input type="date" name="pub_date" id="" (change)="createPub($event)">
     </div>
     <div class="field">
+        <label for="">rating</label>
         <input type="number" name="rating" placeholder="rating" max="5" (change)="createRating($event)">
     </div>
     <div class="field">

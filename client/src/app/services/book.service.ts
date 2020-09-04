@@ -11,4 +11,12 @@ export class BookService {
   addBook(book): any {
     return this.http.post('http://localhost:3000/books/add-book', book)
   }
+
+  getAllBooks() {
+    return this.http.get('http://localhost:3000/books/all-books')
+  }
+
+  getBookById(id) {
+    return this.http.get(`http://localhost:3000/books/${id}`)
+  }
 }
