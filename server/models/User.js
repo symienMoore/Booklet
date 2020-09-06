@@ -31,6 +31,11 @@ const userSchema = new mongoose.Schema({
         default: Date.now
     },
 
+    imagePath: {
+        type: String,
+        
+    },
+
     Books: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: "Book"

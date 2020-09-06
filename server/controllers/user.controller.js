@@ -4,9 +4,14 @@ var verify = require('../config/verify');
 
 exports.registerUser = (req, res, next) => {
   try {
-    User.create(req.body).then((User) => {
-      return res.send(User._id);
- });
+    const url = req.protocol + '://' + req.get("host");
+    User.create({
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      imagePath:  url + "/user-images/" + req.file.filename
+    })
   } catch (error) {
     res.send(error)
   }
