@@ -16,6 +16,7 @@ import { BooksFeedComponent } from './pages/books-feed/books-feed.component';
 import { BookDetailComponent } from './pages/book-detail/book-detail.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { ErrorValidationComponent } from './components/error-validation/error-validation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { UserDetailsComponent } from './pages/user-details/user-details.componen
     BookDetailComponent,
     ProfileComponent,
     UserDetailsComponent,
+    ErrorValidationComponent,
   ],
   imports: [
     BrowserModule,

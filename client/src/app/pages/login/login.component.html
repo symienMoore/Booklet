@@ -1,16 +1,19 @@
 
+<app-error-validation *ngIf="error"></app-error-validation>
+<h1>Welcome back!</h1>
+<div class="container">
     <form (submit)="login()" class="ui form">
         <div class="field">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" [(ngModel)]="email">
+          <input type="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" [(ngModel)]="email" required>
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="field">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" placeholder="Password" name="password" [(ngModel)]="password">
+          <input type="password" placeholder="Password" name="password" [(ngModel)]="password" required>
         </div>
         <button type="submit" class="ui button">Submit</button>
       </form>
-    
-
+      <img src="../../../assets/books.svg" alt="girl reading books" width="400" height="400">
+</div>
 
