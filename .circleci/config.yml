@@ -7,6 +7,6 @@ jobs:
     steps:
      - checkout
      - cd server
-     - run npm insstall
+     - run npm install
 
       
