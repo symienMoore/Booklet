@@ -24,7 +24,6 @@ API_URL = "http://localhost:3000/"
     return this.http.get(`${this.API_URL}users/profile`);
   }
 
-
   loadToken() {
     return localStorage.getItem('authtoken');
   }

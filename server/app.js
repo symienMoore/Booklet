@@ -25,6 +25,7 @@ mongoose.set('useCreateIndex', true);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use("/images", express.static(path.join("images")))
+app.use("/user-images", express.static(path.join("user-images")))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
