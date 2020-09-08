@@ -8,6 +8,8 @@ import { AboutComponent } from "../app/pages/about/about.component";
 import { BooksFeedComponent } from "../app/pages/books-feed/books-feed.component";
 import { BookDetailComponent } from "../app/pages/book-detail/book-detail.component";
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { UserFeedComponent } from "./pages/user-feed/user-feed.component";
+import { ProfileComponent } from "./pages/profile/profile.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +18,8 @@ const routes: Routes = [
   // users route
   { path: 'user/login', component: LoginComponent },
   { path: 'user/signup', component: SignupComponent },
-  { path: 'user/profile', component: UserDetailsComponent },
+  { path: 'user/profile', component: ProfileComponent },
+  { path: 'user/all-users', component: UserFeedComponent },
 
   // books route
   { path: "book/add-book", component: AddBookComponent },

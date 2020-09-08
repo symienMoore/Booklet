@@ -27,4 +27,8 @@ API_URL = "http://localhost:3000/"
   loadToken() {
     return localStorage.getItem('authtoken');
   }
+
+  getAllUser() {
+    return this.http.get(`${this.API_URL}users/all-users`);
+  }
 }

@@ -31,5 +31,7 @@ router.post("/login", controller.userSignIn)
 
 // get requests
 router.get("/profile", verify, controller.getUserProfile)
+router.get("/all-users", verify, controller.getAllUsers)
 
+ 
 module.exports = router;

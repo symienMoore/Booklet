@@ -2,18 +2,20 @@ var User = require('../models/User');
 var jwt = require('jsonwebtoken');
 var verify = require('../config/verify');
 
-exports.registerUser = (req, res, next) => {
+exports.registerUser = async  (req, res) => {
   try {
     const url = req.protocol + '://' + req.get("host");
-    User.create({
+    await User.create({
       name: req.body.name,
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
       imagePath:  url + "/user-images/" + req.file.filename
     })
+    res.send("user added!")
   } catch (error) {
     res.send(error)
+    console.log(error)
   }
     
 }
@@ -64,3 +66,12 @@ exports.getUserById = async (req, res) => {
   }
 }
 
+exports.getAllUsers = async (req, res) => {
+  try {
+    await User.find().then((users) => {
+      res.send(users)
+    })
+  } catch (error) {
+    res.send(error)
+  }
+}
