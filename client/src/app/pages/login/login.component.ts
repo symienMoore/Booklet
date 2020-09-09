@@ -29,9 +29,8 @@ error: Boolean;
          email: this.email,
          password: this.password
        }
-      return this.service.userLogin(user).subscribe((res) => {
-         this.error = false;
-        //  console.table({ res: res })
+      this.service.userLogin(user).subscribe((res) => {
+        this.error = false;
         localStorage.setItem('authtoken', res['token']);
         this.router.navigate(['/user/profile']);
       })

@@ -1,1 +1,25 @@
-<p>profile works!</p>
+<div class="header">
+    <div class="grid">
+        <div class="grid-child" id="first-child">
+            <div class="profile-header">
+                <img class="profile" [src]="user.imagePath" alt="profile picture" width="120" height="120">
+                <h3>{{ user.username }}</h3>
+                <ul>
+                    <li> <a href="">Home</a> </li>
+                    <li> <a href="">Notifications</a> </li>
+                    <li> <a href="">Messages</a> </li>
+                    <li> <a href="">Liked Books</a> </li>
+                    <li> <a href="">Add Book</a> </li>
+                </ul>  
+            </div>
+        </div>
+        <div class="grid-child" id="two">
+            <div class="book-hold" *ngIf="!booksAvailable">
+                <p>You don't seem to have any books yet, let's add some!</p>
+            </div>
+            <div class="book-hold" *ngIf="booksAvailable">
+                <div class="card"></div>
+            </div>
+        </div>
+    </div>
+</div>

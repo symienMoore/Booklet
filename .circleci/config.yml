@@ -1,5 +1,11 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
+jobs:
+  build:
+    docker:
+      — image: circleci/node:latest
+    steps:
+     - checkout
+     - run: cd server
+     - run: npm install
+
       

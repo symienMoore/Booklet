@@ -1,1 +1,25 @@
-<p>signup works!</p>
+<app-error-validation *ngIf="error"></app-error-validation>
+<h1>Sign up</h1>
+<form class="ui form" enctype="multipart/form-data" (ngSubmit)="doUserSignUp()">
+ <div class="field">
+     <label for="name">Name</label>
+     <input type="text" name="name" placeholder="name" (change)="createName($event)">
+ </div>
+ <div class="field">
+     <label for="username">Username</label>
+     <input type="text" name="username" placeholder="username" (change)="createUsername($event)">
+ </div>
+ <div class="field">
+     <label for="email">Email</label>
+     <input type="email" name="email" placeholder="name@example.com" (change)="createEmail($event)">
+ </div>
+ <div class="field">
+     <label for="password">Password</label>
+     <input type="password" name="password" placeholder="password" (change)="createPassword($event)">
+ </div>
+ <div class="field">
+     <label for="imagePath">profile image</label>
+     <input type="file" name="profilepicture" (change)="createImage($event)">
+</div>
+ <button class="ui button" type="submit">Submit</button>
+</form>

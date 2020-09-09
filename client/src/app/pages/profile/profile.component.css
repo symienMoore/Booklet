@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 10%;
+    align-items: center;
+}
+
+.profile {
+    border: 1px solid #18dce7;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+ul li {
+    list-style-type: none;
+    margin-top: 40px;
+}
+
+ul li a {
+    color: #18dce7;
+    font-size: 1.3em;
+}

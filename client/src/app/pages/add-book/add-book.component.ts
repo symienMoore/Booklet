@@ -26,16 +26,6 @@ export class AddBookComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.bookForm = this.fb.group({
-    //   title: '',
-    //   desc: '',
-    //   pub_date: '',
-    //   rating: '',
-    //   author: '',
-    //   genre: '',
-    //   imagePath: ''
-      
-    //  })
   }
 
   //TODO: remeber to append the data to formdata

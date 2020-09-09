@@ -1,14 +1,22 @@
 var User = require('../models/User');
+var Book = require('../models/Book');
 var jwt = require('jsonwebtoken');
 var verify = require('../config/verify');
 
-exports.registerUser = (req, res, next) => {
+exports.registerUser = async  (req, res) => {
   try {
-    User.create(req.body).then((User) => {
-      return res.send(User._id);
- });
+    const url = req.protocol + '://' + req.get("host");
+    await User.create({
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      imagePath:  url + "/user-images/" + req.file.filename
+    })
+    res.send("user added!")
   } catch (error) {
     res.send(error)
+    console.log(error)
   }
     
 }
@@ -32,13 +40,14 @@ exports.userSignIn = async function(req, res) {
 exports.getUserProfile = async (req, res) => {
   try {
     user = req.user.id;
-    await User.findById({_id: user}).then(async (user) => {
+    await User.findOne({_id: user}).then(async (user) => {
       await res.send(user)
       console.log(user)
     })
   } catch (error) {
     data = {err: error.message, status: 500}
     res.send(data)
+    console.log(data)
   }   
 }
 
@@ -59,3 +68,21 @@ exports.getUserById = async (req, res) => {
   }
 }
 
+exports.getAllUsers = async (req, res) => {
+  try {
+    await User.find().then((users) => {
+      res.send(users)
+    })
+  } catch (error) {
+    res.send(error)
+  }
+}
+
+exports.getBookByUser = async (req, res) => {
+  try {
+     const books = await Book.find({ user: req.user.id })
+      res.send(books)
+  } catch (err) {
+      res.send(err)
+  }
+}
