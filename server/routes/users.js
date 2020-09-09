@@ -11,7 +11,7 @@
 var express = require('express');
 var router = express.Router();
 var controller = require("../controllers/user.controller");
-const { verify } = require('jsonwebtoken');
+const verify = require("../config/verify");
 var multer = require('multer');
 
 var storage = multer.diskStorage({
@@ -32,6 +32,6 @@ router.post("/login", controller.userSignIn)
 // get requests
 router.get("/profile", verify, controller.getUserProfile)
 router.get("/all-users", verify, controller.getAllUsers)
-
+router.get('/books', verify, controller.getBookByUser)
  
 module.exports = router;

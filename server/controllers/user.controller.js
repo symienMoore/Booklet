@@ -1,4 +1,5 @@
 var User = require('../models/User');
+var Book = require('../models/Book');
 var jwt = require('jsonwebtoken');
 var verify = require('../config/verify');
 
@@ -39,13 +40,14 @@ exports.userSignIn = async function(req, res) {
 exports.getUserProfile = async (req, res) => {
   try {
     user = req.user.id;
-    await User.findById({_id: user}).then(async (user) => {
+    await User.findOne({_id: user}).then(async (user) => {
       await res.send(user)
       console.log(user)
     })
   } catch (error) {
     data = {err: error.message, status: 500}
     res.send(data)
+    console.log(data)
   }   
 }
 
@@ -73,5 +75,14 @@ exports.getAllUsers = async (req, res) => {
     })
   } catch (error) {
     res.send(error)
+  }
+}
+
+exports.getBookByUser = async (req, res) => {
+  try {
+     const books = await Book.find({ user: req.user.id })
+      res.send(books)
+  } catch (err) {
+      res.send(err)
   }
 }

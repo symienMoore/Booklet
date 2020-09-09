@@ -1,6 +1,8 @@
-<div *ngFor="let user of users">
-    <div class="container">
-        <img class="profile" [src]="user.imagePath" alt="" width="100" height="100"> 
-        <h3>{{ user.username }}</h3>
+<div class="container-main">
+    <div *ngFor="let user of users">
+        <div class="container">
+            <img class="profile" [src]="user.imagePath" alt="" width="100" height="100"> 
+            <h3>{{ user.username }}</h3>
+        </div>
     </div>
 </div>

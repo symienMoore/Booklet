@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +9,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
   user;
-  constructor(private service: UserService) { }
+  books: any = []
+  booksAvailable: Boolean = true;
+
+  constructor(
+    private service: UserService,
+    private bookSvc: BookService
+  ) { }
   
   ngOnInit() {
     this.getUserProfile();
@@ -17,7 +24,6 @@ export class ProfileComponent implements OnInit {
    getUserProfile() {
      this.service.getProfile().subscribe((res) => {
        if (res !== null || undefined) {
-         console.log(res.username + ': this is your response')
          this.user = res;
        } else {
          console.log(res.toString())
@@ -25,5 +31,7 @@ export class ProfileComponent implements OnInit {
      })
    }
  
-  
+  getUserBooks() {
+    
+  }
 }
