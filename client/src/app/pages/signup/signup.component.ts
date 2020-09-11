@@ -63,10 +63,9 @@ userForm: FormGroup
       user.append("image", this.imagePath, this.name)
       console.log(user)
       this.service.addUser(user).subscribe((res) => {
-        console.log(user)
-        console.log(res)
         this.router.navigate(['/user/login'])
       })
+      this.router.navigate(['/user/login'])
     }
   }
 }

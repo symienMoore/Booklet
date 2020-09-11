@@ -16,15 +16,15 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
 
   // users route
-  { path: 'user/login', component: LoginComponent },
-  { path: 'user/signup', component: SignupComponent },
-  { path: 'user/profile', component: ProfileComponent },
+  { path: 'user/login',     component: LoginComponent },
+  { path: 'user/signup',    component: SignupComponent },
+  { path: 'user/profile',   component: ProfileComponent },
   { path: 'user/all-users', component: UserFeedComponent },
 
   // books route
   { path: "book/add-book", component: AddBookComponent },
-  { path: 'books/feed', component: BooksFeedComponent },
-  { path: 'book/:id', component: BookDetailComponent }
+  { path: 'books/feed',    component: BooksFeedComponent },
+  { path: 'book/:id',      component: BookDetailComponent }
 ];
 
 @NgModule({

@@ -3,6 +3,11 @@
     grid-template-columns: 1.5fr 3fr;
 }
 
+/* #first-child{
+    position: fixed;
+    margin-left: 10%;
+} */
+
 .profile-header {
     display: flex;
     flex-direction: column;
@@ -17,6 +22,10 @@
     object-fit: cover;
 }
 
+.date {
+    color: gray;
+}
+
 ul li {
     list-style-type: none;
     margin-top: 40px;
@@ -25,4 +34,29 @@ ul li {
 ul li a {
     color: #18dce7;
     font-size: 1.3em;
+}
+
+/* #two {
+    margin-left: 30%;
+} */
+
+.book-hold {
+    margin-top: 100px;
+}
+
+.book-card {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    width: 800px;
+    border: 1px solid #18dce7;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 5px 15px 25px lightgrey;
+}
+
+.desc {
+    color: grey;
+    width: 350px;
+    margin-left: 100px;
 }

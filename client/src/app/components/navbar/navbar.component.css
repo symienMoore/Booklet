@@ -36,7 +36,7 @@ ul li {
 }
 
 ul li a {
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 1.2em;
     color: #18dce7;
 }

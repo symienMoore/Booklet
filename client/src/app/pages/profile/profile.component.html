@@ -4,12 +4,13 @@
             <div class="profile-header">
                 <img class="profile" [src]="user.imagePath" alt="profile picture" width="120" height="120">
                 <h3>{{ user.username }}</h3>
+                <p class="date">joined: {{ user.createdAt | date }}</p>
                 <ul>
-                    <li> <a href="">Home</a> </li>
-                    <li> <a href="">Notifications</a> </li>
-                    <li> <a href="">Messages</a> </li>
-                    <li> <a href="">Liked Books</a> </li>
-                    <li> <a href="">Add Book</a> </li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Notifications</a></li>
+                    <li><a href="">Messages</a></li>
+                    <li><a href="">Liked Books</a></li>
+                    <li><a [routerLink]="['/book/add-book']">Add Book</a></li>
                 </ul>  
             </div>
         </div>
@@ -18,7 +19,19 @@
                 <p>You don't seem to have any books yet, let's add some!</p>
             </div>
             <div class="book-hold" *ngIf="booksAvailable">
-                <div class="card"></div>
+                <h2>My books</h2>
+                <div class="card" *ngFor="let book of books">
+                    <div class="book-card">
+                        <div>
+                            <img [src]="book.imagePath" alt="cover photo" height="100" width="70">
+                            <a  [routerLink]="['/book', book._id]"><h4>{{ book.title }}</h4></a> 
+                            <h5>rating: {{ book.rating }}</h5>
+                        </div>
+                        <div class="desc">
+                            {{ book.desc }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

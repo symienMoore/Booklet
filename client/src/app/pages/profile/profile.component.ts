@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   
   ngOnInit() {
     this.getUserProfile();
+    this.getUserBooks();
    }
  
    getUserProfile() {
@@ -32,6 +33,9 @@ export class ProfileComponent implements OnInit {
    }
  
   getUserBooks() {
-    
+    this.service.getBooksByUser().subscribe(res => {
+      console.log(res)
+      this.books = res
+    })
   }
 }
