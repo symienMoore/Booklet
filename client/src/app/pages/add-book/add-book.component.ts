@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/Book.model';
 import { FormArray, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { ThrowStmt } from '@angular/compiler';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',
@@ -22,7 +22,8 @@ export class AddBookComponent implements OnInit {
 
   constructor(
     private service: BookService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -69,10 +70,10 @@ export class AddBookComponent implements OnInit {
     book.append("author", this.author);
     book.append("genre", this.genre);
     book.append("image", this.imagePath, this.title)
-
     this.service.addBook(book).subscribe((res) => {
       console.table({res: res})
     })
+    this.router.navigate(['/user/profile']);
   }
 
 }

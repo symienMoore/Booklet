@@ -1,7 +1,7 @@
 nav {
     /* margin-left: 65%; */
     align-items: center;
-    background: white;
+    background: #18dce7;
 }
 .logo{
     position: absolute;
@@ -10,9 +10,8 @@ nav {
 }
 
 .logo a {
-    color: #18dce7;
+    color: white;
    font-weight: bold;
-   font-size: 1.2em;
 }
 
 .logo a:hover {
@@ -26,7 +25,7 @@ ul {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 70%;
-    /* background: #18dce7; */
+    background: #18dce7;
 }
 
 ul li {
@@ -36,7 +35,6 @@ ul li {
 }
 
 ul li a {
-    /* font-weight: bold; */
     font-size: 1.2em;
-    color: #18dce7;
+    color: white;
 }
