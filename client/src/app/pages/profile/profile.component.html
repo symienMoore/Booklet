@@ -1,4 +1,4 @@
-<div class="header">
+<!-- <div class="header">
     <div class="grid">
         <div class="grid-child" id="first-child">
             <div class="profile-header">
@@ -32,6 +32,26 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="main-container">
+    <div class="profile-header">
+        <img class="profile" [src]="user.imagePath" alt="profile picture" width="120" height="120">
+        <div class="bio">
+            <h3>{{ user.username }}</h3>
+            <p class="date">joined: {{ user.createdAt | date }}</p> 
+        </div>
+    </div>
+    <h2 class="book-header">Books:</h2>
+    <div class="container">
+        <div class="book-card" *ngFor="let book of books">
+            <div class="book-img">
+                <img class="book-cover" [src]="book.imagePath" alt="cover photo" height="200" width="200">
+                <a [routerLink]="['/book', book._id]"><h4>{{ book.title }}</h4></a> 
+                <h5 class="rating">rating: {{ book.rating }}</h5>
             </div>
         </div>
     </div>

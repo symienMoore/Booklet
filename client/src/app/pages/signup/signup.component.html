@@ -18,6 +18,10 @@
      <input type="password" name="password" placeholder="password" (change)="createPassword($event)">
  </div>
  <div class="field">
+     <label for="confirm">Confirm Password</label>
+     <input type="password" name="confirmation" placeholder="confirm password" required (change)="setPasswordConfirmation($event)">
+ </div>
+ <div class="field">
      <label for="imagePath">profile image</label>
      <input type="file" name="profilepicture" (change)="createImage($event)">
 </div>

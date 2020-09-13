@@ -18,6 +18,7 @@ userForm: FormGroup
   password: ''
   imagePath: ''
   error: Boolean
+  passwordConfirmation: ''
 
   constructor(
     private service: UserService,
@@ -48,13 +49,17 @@ userForm: FormGroup
     this.imagePath = event.target.files[0]
   }
 
+  setPasswordConfirmation(event) {
+    this.passwordConfirmation = event.target.value
+  }
+
 
   
 
   doUserSignUp() {
     if (this.name == null || this.username == null || this.email == null || this.password == null) {
       this.error = true
-    } else {
+    } else if(this.password == this.passwordConfirmation) {
       const user = new FormData()
       user.append("name", this.name)
       user.append("username", this.username)
