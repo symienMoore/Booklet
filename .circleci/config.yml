@@ -1,7 +1,7 @@
 version: 2.1 # using 2.1 provides access to orbs and other features
 
 jobs:
-  build-server:
+  build:
     docker:
       - image: node:latest
     working_directory: /server
@@ -16,12 +16,12 @@ jobs:
     working_directory: /client
     steps:
     - checkout
-    - run:  pwd
+    - run: pwd
     
 worklflows:
   version: 2.1
   build_server_and_client:
     jobs:
-      - build-server
+      - build
       - build-client
 
