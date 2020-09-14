@@ -10,7 +10,7 @@ jobs:
       - run: npm install
       - run: pwd
 
-  build-client:
+  test:
     docker: 
       - image: node:latest
     working_directory: /client
@@ -23,5 +23,5 @@ worklflows:
   build_server_and_client:
     jobs:
       - build
-      - build-client
+      - test
 
