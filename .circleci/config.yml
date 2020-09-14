@@ -7,7 +7,7 @@ jobs:
     working_directory: /server
     steps: 
       - checkout
-      - run: echo "may the force be with you"
+      - run: npm install
       - run: pwd
 
 

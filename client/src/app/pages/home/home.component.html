@@ -1,7 +1,17 @@
-<h1>
-    Welcome to <br>
-    <span>Booklit.</span>
-</h1>
-<button class="medium ui button">
-    <a [routerLink]="['user/login']">login</a>
-</button>
+<div class="container" >
+    <div class="no-user-container" *ngIf="!user">
+        <h1>
+            Welcome to <br>
+            <span>Booklit.</span>
+        </h1>
+        <button class="medium ui button">
+            <a [routerLink]="['user/login']">login</a>
+        </button>
+    </div>
+    <div class="user-container" *ngIf="user">
+        <div class="profile-header">
+            <a [routerLink]="['user/profile']"><img class="main-profile-image" [src]="loggedInUser.imagePath" alt="profile picture" height="100" width="100"></a>
+            <h1 class="greeting">Hello, {{ loggedInUser.name }}</h1>
+        </div>
+    </div>
+</div>

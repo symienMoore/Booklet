@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  loggedInUser
+  user = localStorage.getItem('authtoken')
+  userLoggedIn: Boolean = false
 
-  constructor() { }
+  constructor(
+    private service: UserService,
+  ) { }
 
   ngOnInit(): void {
+    this.checkUserLoggedIn()
+    this.getUser()
   }
 
+  checkUserLoggedIn() {
+    if (this.user !== undefined || this.user !== null) {
+      this.userLoggedIn = true
+      console.log(this.userLoggedIn)
+    } else {
+      this.userLoggedIn = false
+      console.log(this.userLoggedIn)
+    }
+  }
+
+  getUser() {
+    this.service.getProfile().subscribe(res => {
+      this.loggedInUser = res
+    })
+  }
 }

@@ -97,7 +97,7 @@ ul li a {
 .container {
     width: 600px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .book-img {
