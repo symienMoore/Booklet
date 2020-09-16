@@ -1,27 +1,25 @@
 version: 2.1 # using 2.1 provides access to orbs and other features
 
 jobs:
-  build:
+  build-server:
     docker:
-      - image: node:latest
+      - image: circleci/node:latest
     working_directory: /server
     steps: 
       - checkout
       - run: npm install
       - run: pwd
-
-  test:
+  build-client:
     docker: 
-      - image: node:latest
+      - image: circleci/node:latest
     working_directory: /client
     steps:
-    - checkout
-    - run: pwd
-    
+      - checkout
+      - run: pwd  
 worklflows:
   version: 2.1
-  build_server_and_client:
+  build:
     jobs:
-      - build
-      - test
+      - build-server
+      - build-client
 
