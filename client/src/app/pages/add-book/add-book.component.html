@@ -1,4 +1,5 @@
 <h1>Add a book</h1>
+<app-loader *ngIf="isLoading"></app-loader>
 <form class="ui form" enctype="multipart/form-data" (ngSubmit)="addBook()" >
     <div class="field">
       <label>title</label>

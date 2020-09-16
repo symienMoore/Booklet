@@ -20,6 +20,8 @@ export class AddBookComponent implements OnInit {
   genre: string
   imagePath: string
 
+  isLoading: Boolean = false
+
   constructor(
     private service: BookService,
     private fb: FormBuilder,
@@ -28,8 +30,6 @@ export class AddBookComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  //TODO: remeber to append the data to formdata
 
   createTitle(event) {
     this.title = event.target.value;
@@ -60,6 +60,7 @@ export class AddBookComponent implements OnInit {
   }
 
   addBook() {
+    this.isLoading = true
     const date = new Date(this.pub_date).toUTCString()
     const rate = this.rating.toString()
     const book = new FormData()
@@ -73,6 +74,7 @@ export class AddBookComponent implements OnInit {
     this.service.addBook(book).subscribe((res) => {
       console.table({res: res})
     })
+    this.isLoading = false
     this.router.navigate(['/user/profile']);
   }
 

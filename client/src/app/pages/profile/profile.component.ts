@@ -11,7 +11,7 @@ export class ProfileComponent implements OnInit {
   user;
   books: any = []
   booksAvailable: Boolean = true;
-
+  isLoading: Boolean = false
   constructor(
     private service: UserService,
     private bookSvc: BookService
@@ -33,9 +33,11 @@ export class ProfileComponent implements OnInit {
    }
  
   getUserBooks() {
+    this.isLoading = true
     this.service.getBooksByUser().subscribe(res => {
       console.log(res)
       this.books = res
+      this.isLoading = false;
     })
   }
 }

@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   loggedInUser
   user = localStorage.getItem('authtoken')
   userLoggedIn: Boolean = false
+  isLoading: Boolean = false
 
   constructor(
     private service: UserService,
@@ -31,8 +32,10 @@ export class HomeComponent implements OnInit {
   }
 
   getUser() {
+    this.isLoading = true
     this.service.getProfile().subscribe(res => {
       this.loggedInUser = res
+      this.isLoading = false
     })
   }
 }
