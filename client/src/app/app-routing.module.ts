@@ -10,21 +10,23 @@ import { BookDetailComponent } from "../app/pages/book-detail/book-detail.compon
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { UserFeedComponent } from "./pages/user-feed/user-feed.component";
 import { ProfileComponent } from "./pages/profile/profile.component";
+import { BookEditComponent } from './pages/book-edit/book-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
 
-  // users route
+  // users routes
   { path: 'user/login',     component: LoginComponent },
   { path: 'user/signup',    component: SignupComponent },
   { path: 'user/profile',   component: ProfileComponent },
   { path: 'user/all-users', component: UserFeedComponent },
 
-  // books route
+  // books routes
   { path: "book/add-book", component: AddBookComponent },
   { path: 'books/feed',    component: BooksFeedComponent },
-  { path: 'book/:id',      component: BookDetailComponent }
+  { path: 'book/:id', component: BookDetailComponent },
+  { path: 'book/edit/:id', component: BookEditComponent }
 ];
 
 @NgModule({
