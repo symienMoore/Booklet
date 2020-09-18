@@ -38,6 +38,7 @@
 </div> -->
 
 <div class="main-container">
+    <app-loader *ngIf="isLoading"></app-loader>
     <div class="profile-header">
         <img class="profile" [src]="user.imagePath" alt="profile picture" width="120" height="120">
         <div class="bio">
@@ -45,7 +46,16 @@
             <p class="date">joined: {{ user.createdAt | date }}</p> 
         </div>
     </div>
+    <div class="links">
+        <ul>
+            <li><i class="book icon"></i></li>
+            <li><i class="pencil alternate icon"></i></li>
+            <li><i class="bookmark outline icon"></i></li>
+            <li><i class="users icon"></i></li>
+        </ul> 
+    </div>
     <h2 class="book-header">Books:</h2>
+    <p><a [routerLink]="['/book/add-book']">add book</a></p>
     <div class="container">
         <div class="book-card" *ngFor="let book of books">
             <div class="book-img">

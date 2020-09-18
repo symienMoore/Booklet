@@ -18,6 +18,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { ErrorValidationComponent } from './components/error-validation/error-validation.component';
 import { UserFeedComponent } from './pages/user-feed/user-feed.component';
+import { LoaderComponent } from './components/loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { UserFeedComponent } from './pages/user-feed/user-feed.component';
     UserDetailsComponent,
     ErrorValidationComponent,
     UserFeedComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

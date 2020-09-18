@@ -10,3 +10,25 @@ span {
 .medium a{
     color: white;
 }
+
+.user-container {
+    margin: 8% 0 0 7%;
+}
+
+.profile-header {
+    display: flex;
+    /* flex-direction: column; */
+    width:auto;
+    align-items: center;
+    /* background: red; */
+}
+
+.greeting {
+    margin-left: 50px;
+    color: #18dce7;
+}
+
+.main-profile-image {
+    object-fit: cover;
+    border-radius: 100px;
+}
