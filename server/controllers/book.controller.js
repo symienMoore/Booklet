@@ -45,3 +45,25 @@ exports.getBookById = async (req, res) => {
   }
 }
 
+exports.editBook = async (req, res) => {
+    try {
+        const url = req.protocol + '://' + req.get("host");
+        await Book.findByIdAndUpdate({ _id: req.params.id })
+            .then(book => {
+            console.log(book + " found book")
+            // book.update({
+            //     title: req.body.title,
+            //     desc: req.body.desc,
+            //     pub_date: req.body.pub_date,
+            //     rating: req.body.rating,
+            //     author: req.body.author,
+            //     genre: req.body.genre,
+            //     // imagePath: url + "/images/" + req.file.filename,
+            // })
+            //     console.log(book)
+            //     res.send(book)
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}

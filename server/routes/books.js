@@ -34,4 +34,7 @@ router.get('/all-books', verify, controller.getAllBooks);
 router.get('/:id', verify, controller.getBookById);
 
 
+// put requests
+router.put('/edit/:id', verify, multer({ storage: storage }).single("image"), controller.editBook)
+
 module.exports = router;

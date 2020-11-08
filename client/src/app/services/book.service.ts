@@ -19,4 +19,8 @@ export class BookService {
   getBookById(id) {
     return this.http.get(`http://localhost:3000/books/${id}`)
   }
+
+  // editBook(book) {
+  //   return this.http.put(`http://localhost:3000/books/${id}`, book)
+  // }
 }

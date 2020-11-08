@@ -5,17 +5,17 @@ h1 {
     color: #17DCE7;
 }
 
-.container {
+.form-hold {
     display: flex;
     align-items: center;
 }
 
 form {
-    width: 600px;
-    margin-left: 18%;
+    width: 500px;
 }
 
+
 img {
-    margin-left: 100px;
+    margin-left: 20%;
 }
 

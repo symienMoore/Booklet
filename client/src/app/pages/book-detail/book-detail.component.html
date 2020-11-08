@@ -3,6 +3,6 @@
     <h1>{{ book.title }}</h1>
     <h4>rating: {{ book.rating }}</h4>
     <p>{{ book.desc }}</p>
-    <button class="btn">Edit Book</button>
+    <button class="btn"><a [routerLink]="['/book/edit', book._id]">Edit Book</a></button>
     <button class="btn">Remove Book</button>
 </div>

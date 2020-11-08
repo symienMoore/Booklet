@@ -1,4 +1,4 @@
-<nav *ngIf="!userLoggedIn">
+<nav *ngIf="!userLoggedIn" class="navbar navbar-expand-lg">
     <h4 class="logo"><a [routerLink]="['']">Booklit.</a></h4>
     <ul>
         <li><a [routerLink]="['about']">about</a></li>
@@ -6,7 +6,7 @@
         <li><a [routerLink]="['user/login']">login</a></li>
     </ul>
 </nav>
-<nav *ngIf="userLoggedIn">
+<nav *ngIf="userLoggedIn" class="navbar navbar-expand-lg">
     <h4 class="logo"><a [routerLink]="['']">Booklit.</a></h4>
     <ul>
         <li><a [routerLink]="['book/add-book']">add book</a></li>
