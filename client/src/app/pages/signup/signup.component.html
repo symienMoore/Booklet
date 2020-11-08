@@ -2,27 +2,27 @@
 <h1>Sign up</h1>
 <form class="ui form" enctype="multipart/form-data" (ngSubmit)="doUserSignUp()">
  <div class="field">
-     <label for="name">Name</label>
+     <label for="name">*Name</label>
      <input type="text" class="form-control" name="name" placeholder="name" (change)="createName($event)">
  </div>
  <div class="field">
-     <label for="username">Username</label>
+     <label for="username">*Username</label>
      <input type="text" class="form-control" name="username" placeholder="username" (change)="createUsername($event)">
  </div>
  <div class="field">
-     <label for="email">Email</label>
+     <label for="email">*Email</label>
      <input type="email" class="form-control" name="email" placeholder="name@example.com" (change)="createEmail($event)">
  </div>
  <div class="field">
-     <label for="password">Password</label>
+     <label for="password">*Password</label>
      <input type="password" class="form-control" name="password" placeholder="password" (change)="createPassword($event)">
  </div>
  <div class="field">
-     <label for="confirm">Confirm Password</label>
+     <label for="confirm">*Confirm Password</label>
      <input type="password" class="form-control" name="confirmation" placeholder="confirm password" required (change)="setPasswordConfirmation($event)">
  </div>
  <div class="field">
-     <label for="imagePath">profile image</label>
+     <label for="imagePath">*profile image</label>
      <input type="file" class="form-control" name="profilepicture" (change)="createImage($event)">
 </div>
  <button class="ui button" type="submit">Submit</button>
