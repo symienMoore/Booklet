@@ -1,13 +1,20 @@
 <app-loader *ngIf="isLoading"></app-loader>
-<div class="container" >
     <div class="no-user-container" *ngIf="!user">
-        <h1>
-            Welcome to <br>
-            <span>Booklit.</span>
-        </h1>
-        <button class="medium ui button">
-            <a [routerLink]="['user/login']">login</a>
-        </button>
+        <div class="banner">
+            <h1>
+                Welcome to <br>
+                <span>Booklit.</span>
+            </h1>
+            <div class="btns">
+                <button class="medium ui button">
+                    <a [routerLink]="['user/login']">login</a>
+                </button>
+                <button class="signup">
+                    <a [routerLink]="['user/signup']">sign up</a>
+                </button>
+            </div>
+        </div>
+
     </div>
     <div class="user-container" *ngIf="user">
         <div class="profile-header">
@@ -15,4 +22,3 @@
             <h1 class="greeting">Hello, {{ loggedInUser.name }}</h1>
         </div>
     </div>
-</div>

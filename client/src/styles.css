@@ -9,4 +9,6 @@ button {
     padding: 3px;
     border: none;
     width: 100px;
+    outline: none;
 }
+
